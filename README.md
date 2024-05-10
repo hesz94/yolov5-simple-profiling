@@ -5,9 +5,13 @@ https://github.com/ultralytics/yolov5
 
 
 (Almost) entirety of work is confined to profiling.ipynb file, which should be fairly simple to go through (you can simply run all cells in order for default processing). Additionally for more comfortable log generation, script with same hardcoded values as the notebook can be ran (e.g. python3 run_profiling.py > results.log).
+Steps to run:
+1) pip install -r requirements.txt
+2) python run_profiling.py
+3) (optional) Browse (and edit/run) code in profiling.ipynb
 
 My goals when writing this code were:
-1) make reasonably large part of it as universal and applicable to other models
+1) make reasonably large part of it universal and applicable to other models
 2) limit changes to existing model code to absolute minimum
 
 With that we have a universal "TimedModule" torch module which can wrap any torch module, with a replacer crawler that allows it to work on an already loaded model. This part is easy to modify to add additional behavior, change the way the results are displayed, etc - with very minor modifications necessary to achieve such goals. Additionally, selecting *which* exact module types we want to profile is very simple too - there may be cases where we're more interested in block-level performance, rather than individual operations. 
