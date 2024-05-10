@@ -5,6 +5,7 @@ https://github.com/ultralytics/yolov5
 
 
 (Almost) entirety of work is confined to profiling.ipynb file, which should be fairly simple to go through (you can simply run all cells in order for default processing). Additionally for more comfortable log generation, script with same hardcoded values as the notebook can be ran (e.g. python3 run_profiling.py > results.log).
+
 Steps to run:
 1) pip install -r requirements.txt
 2) python run_profiling.py
